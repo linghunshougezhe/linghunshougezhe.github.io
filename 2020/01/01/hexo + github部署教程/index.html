@@ -1,0 +1,615 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN"
+            
+          
+    >
+    <head>
+    <meta charset="utf-8">
+    
+
+    
+
+    
+    <title>
+        Hexo + GitHub部署教程 |
+        
+        Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CUbuntu%20Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+    
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free/css/v4-font-face.min.css">
+
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+    <meta name="description" content="友情教学链接： 12https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;550928575更换主题：https:&#x2F;&#x2F;cloud.tencent.com&#x2F;developer&#x2F;article&#x2F;1662757  安装必备软件  下载 Node  安装Node软件，全程点击 【 Next 】 测试是否安装Node成功。win+R 管理员运行 cdm ,输入npm -v 以及 node -v 12np">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo + GitHub部署教程">
+<meta property="og:url" content="http://example.com/2020/01/01/hexo%20+%20github%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="友情教学链接： 12https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;550928575更换主题：https:&#x2F;&#x2F;cloud.tencent.com&#x2F;developer&#x2F;article&#x2F;1662757  安装必备软件  下载 Node  安装Node软件，全程点击 【 Next 】 测试是否安装Node成功。win+R 管理员运行 cdm ,输入npm -v 以及 node -v 12np">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2020/01/01/hexo%20+%20github%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/Node.png">
+<meta property="og:image" content="http://example.com/2020/01/01/hexo%20+%20github%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/Git.png">
+<meta property="og:image" content="http://example.com/2020/01/01/hexo%20+%20github%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/GitHub-Name.png">
+<meta property="og:image" content="http://example.com/2020/01/01/hexo%20+%20github%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/GitHub-ssh.png">
+<meta property="article:published_time" content="2019-12-31T17:00:00.000Z">
+<meta property="article:modified_time" content="2023-10-28T16:33:42.463Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="初学者">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2020/01/01/hexo%20+%20github%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/Node.png">
+    
+        <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/typeface-source-code-pro@1.1.13/index.css">
+
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/katex@0.16.7/dist/katex.min.css">
+
+    
+    
+    
+    
+<script src="https://unpkg.com/pace-js@1.2.4/pace.min.js"></script>
+
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/wowjs@1.1.3/css/libs/animate.css">
+
+        
+<script src="https://unpkg.com/wowjs@1.1.3/dist/wow.min.js"></script>
+
+        <script>
+          new WOW({
+            offset: 0,
+            mobile: true,
+            live: false
+          }).init();
+        </script>
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+    <body>
+    
+<div id='loader'>
+  <div class="loading-left-bg"></div>
+  <div class="loading-right-bg"></div>
+  <div class="spinner-box">
+    <div class="loading-taichi">
+      <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+      <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+      <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+      <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+    </svg>
+    </div>
+    <div class="loading-word">少女祈祷中...</div>
+  </div>
+</div>
+</div>
+
+<script>
+  const endLoading = function() {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('load', endLoading);
+  document.getElementById('loader').addEventListener('click', endLoading);
+</script>
+
+
+    <div id="container">
+        <div id="wrap">
+            <header id="header">
+    
+        <img data-src="/images/banner.jpg" data-sizes="auto" alt="Hexo + GitHub部署教程" class="lazyload">
+    
+    <div id="header-outer" class="outer">
+        <div id="header-title" class="inner">
+            <div id="logo-wrap">
+                
+                    
+                    
+                        <a href="/" id="logo"><h1>Hexo + GitHub部署教程</h1></a>
+                    
+                
+            </div>
+            
+                
+                
+            
+        </div>
+        <div id="header-inner">
+            <nav id="main-nav">
+                <a id="main-nav-toggle" class="nav-icon"></a>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/">首页</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/archives">归档</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/about">关于</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/friend">友链</a>
+                    </span>
+                
+            </nav>
+            <nav id="sub-nav">
+                
+                    <a id="nav-rss-link" class="nav-icon" href="/atom.xml"
+                       title="RSS 订阅"></a>
+                
+                
+            </nav>
+            <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+            </div>
+        </div>
+    </div>
+</header>
+
+            <div id="content" class="outer">
+                <section id="main"><article id="post-hexo + github部署教程" class="h-entry article article-type-post"
+         itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <div class="article-inner">
+        <div class="article-meta">
+            <div class="article-date wow slideInLeft">
+    <a href="/2020/01/01/hexo%20+%20github%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/" class="article-date-link">
+        <time datetime="2019-12-31T17:00:00.000Z"
+              itemprop="datePublished">2020-01-01</time>
+    </a>
+</div>
+
+            
+    <div class="article-category wow slideInLeft">
+        <a class="article-category-link" href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+    </div>
+
+
+        </div>
+        <div class="hr-line"></div>
+        
+
+        <div class="e-content article-entry" itemprop="articleBody">
+            
+                <p>友情教学链接：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://zhuanlan.zhihu.com/p/550928575</span><br><span class="line">更换主题：https://cloud.tencent.com/developer/article/1662757</span><br></pre></td></tr></table></figure>
+<h1 id="安装必备软件"><a class="markdownIt-Anchor" href="#安装必备软件"></a> 安装必备软件</h1>
+<h2 id="下载-node"><a class="markdownIt-Anchor" href="#下载-node"></a> 下载 <a target="_blank" rel="noopener" href="https://nodejs.org/en">Node</a></h2>
+<p><img src="Node.png" alt="图片" /><br />
+安装Node软件，全程点击 【 Next 】<br />
+测试是否安装Node成功。win+R 管理员运行 cdm ,输入npm -v 以及 node -v</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br><span class="line">node -v</span><br></pre></td></tr></table></figure>
+<h2 id="下载-git"><a class="markdownIt-Anchor" href="#下载-git"></a> 下载 <a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a></h2>
+<p><img src="Git.png" alt="图片" /><br />
+安装Git软件，全程点击 【 Next 】<br />
+测试是否安装Git成功。win+R 管理员运行 cdm ,输入git –version</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git –version</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;linghunshougezhe&quot;</span>  <span class="comment">#填写git名字</span></span><br><span class="line">git config --global user.email 1410069804@qq.com  <span class="comment">#填写git邮箱</span></span><br></pre></td></tr></table></figure>
+<h2 id="下载-vscode"><a class="markdownIt-Anchor" href="#下载-vscode"></a> 下载 <a target="_blank" rel="noopener" href="https://code.visualstudio.com/">VSCode</a></h2>
+<p><a target="_blank" rel="noopener" href="https://www.xjx100.cn/news/79950.html?action=onClick">安装VSCode</a>软件，<a target="_blank" rel="noopener" href="https://www.php.cn/faq/432289.html">使用教程</a></p>
+<h1 id="配置github"><a class="markdownIt-Anchor" href="#配置github"></a> 配置<a target="_blank" rel="noopener" href="https://github.com/">GitHub</a></h1>
+<h2 id="注册-github-帐户并创建仓库"><a class="markdownIt-Anchor" href="#注册-github-帐户并创建仓库"></a> 注册 GitHub 帐户并创建仓库</h2>
+<p>仓库名必须是 【 博客名 + .github.io 】，例如： <a target="_blank" rel="noopener" href="http://linghunshougezhe.github.io">linghunshougezhe.github.io</a><br />
+<img src="GitHub-Name.png" alt="图片" /><br />
+复制仓库的SSH链接，并修改 【 …\blog_config.yml 】文件中的内容：<br />
+<img src="GitHub-ssh.png" alt="图片" /></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: <span class="string">&#x27;git&#x27;</span></span><br><span class="line">  repo: git@github.com:linghunshougezhe/linghunshougezhe.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<h2 id="生成ssh密钥"><a class="markdownIt-Anchor" href="#生成ssh密钥"></a> 生成<a target="_blank" rel="noopener" href="https://www.codercto.com/a/57691.html">ssh密钥</a></h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C<span class="string">&quot;1410069804@qq.com&quot;</span></span><br></pre></td></tr></table></figure>
+<p>C盘用户下.ssh文件夹内的【 id_rsa.pub 】文件内的秘钥复制添加在github里面新增秘钥。</p>
+<h1 id="配置hexo"><a class="markdownIt-Anchor" href="#配置hexo"></a> 配置HEXO</h1>
+<h2 id="安装cnpm"><a class="markdownIt-Anchor" href="#安装cnpm"></a> 安装cnpm</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<p>测试是否安装cnpm成功。win+R 管理员运行 cdm ,输入cnpm -v</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm -v</span><br></pre></td></tr></table></figure>
+<h2 id="安装hexo"><a class="markdownIt-Anchor" href="#安装hexo"></a> 安装hexo</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>测试是否安装hexo成功。win+R 管理员运行 cdm ,输入hexo -v</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+<h2 id="创建blog"><a class="markdownIt-Anchor" href="#创建blog"></a> 创建blog</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog  <span class="comment">#创建blog</span></span><br><span class="line"></span><br><span class="line">hexo clean  <span class="comment">#清除多余内容</span></span><br><span class="line"></span><br><span class="line">hexo g  <span class="comment">#本地生成</span></span><br><span class="line"></span><br><span class="line">hexo s  <span class="comment">#本地预览</span></span><br></pre></td></tr></table></figure>
+<p>测试是否创建blog成功。浏览器访问网址：<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:4000/</span><br></pre></td></tr></table></figure>
+<h2 id="部署到github"><a class="markdownIt-Anchor" href="#部署到github"></a> 部署到GitHub</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>外网输入网址：【 博客名 + .github.io 】即可进入网站，例如：<a target="_blank" rel="noopener" href="http://linghunshougezhe.github.io">linghunshougezhe.github.io</a></p>
+<h2 id="下载必备插件"><a class="markdownIt-Anchor" href="#下载必备插件"></a> 下载必备插件</h2>
+<p>如果已经安装了cnpm，下面的命令都可将 【 npm 改为 cnpm 】</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">cd</span> blog  <span class="comment">#进入blog文件中</span></span><br><span class="line"></span><br><span class="line">npm install hexo-deployer-git --save  <span class="comment">#用于将本地生成的网站发布到 Github 上</span></span><br><span class="line"></span><br><span class="line">npm install hexo-generator-sitemap --save  <span class="comment">#用于生成 sitemap</span></span><br><span class="line"></span><br><span class="line">npm install hexogenerator-baidu-sitemap --save  <span class="comment">#用于生成百度收录 sitemap</span></span><br><span class="line"></span><br><span class="line">npm install hexo-renderer-pug --save  <span class="comment">#用于支持 Pug 模板引擎渲染</span></span><br><span class="line"></span><br><span class="line">npm install hexo-generator-searchdb --save <span class="comment">#添加搜索</span></span><br></pre></td></tr></table></figure>
+<h1 id="更换主题"><a class="markdownIt-Anchor" href="#更换主题"></a> 更换<a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题</a></h1>
+<h2 id="选中主题"><a class="markdownIt-Anchor" href="#选中主题"></a> <a target="_blank" rel="noopener" href="https://github.com/D-Sketon/hexo-theme-reimu">选中主题</a>，【 cmd …\blog 文件下】下载主题到本地</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/D-Sketon/hexo-theme-reimu.git</span><br></pre></td></tr></table></figure>
+<h2 id="使用主题"><a class="markdownIt-Anchor" href="#使用主题"></a> 使用主题</h2>
+<p>修改 【 …\blog_config.yml 】文件中的内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: reimu  <span class="comment">#主题所在文件夹的名称</span></span><br></pre></td></tr></table></figure>
+<h2 id="创建md文件文件夹"><a class="markdownIt-Anchor" href="#创建md文件文件夹"></a> 创建MD文件+文件夹</h2>
+<p>修改 【 …\blog_config.yml 】文件中的内容：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: <span class="literal">true</span></span><br><span class="line">marked:</span><br><span class="line">  prependRoot: <span class="literal">true</span></span><br><span class="line">  postAsset: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>创建MD文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new title</span><br></pre></td></tr></table></figure>
+<p>MD文件中插入图片，在同名文件夹内存入图片</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![图片](1.png)  <span class="comment">#填写图片名称即可加载图片</span></span><br></pre></td></tr></table></figure>
+
+            
+        </div>
+        <footer class="article-footer">
+            <a data-url="http://example.com/2020/01/01/hexo%20+%20github%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/" data-id="cloa9i6r60008tsnmakh01k52" data-title="Hexo + GitHub部署教程"
+               class="article-share-link">分享</a>
+            
+            
+            
+            
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%88%9D%E5%AD%A6%E8%80%85/" rel="tag">初学者</a></li></ul>
+
+
+        </footer>
+    </div>
+    
+        
+    <nav id="article-nav" class="wow fadeInUp">
+        
+            <div class="article-nav-link-wrap article-nav-link-left">
+                
+                    
+                    
+                        <img data-src="/images/banner.jpg" data-sizes="auto" alt="Reimu主题初始化"
+                             class="lazyload">
+                    
+                
+                <a href="/2020/01/01/Reimu%E4%B8%BB%E9%A2%98%E5%88%9D%E5%A7%8B%E5%8C%96/"></a>
+                <div class="article-nav-caption">前一篇</div>
+                <h3 class="article-nav-title">
+                    
+                        Reimu主题初始化
+                    
+                </h3>
+            </div>
+        
+        
+            <div class="article-nav-link-wrap article-nav-link-right">
+                
+                    
+                    
+                        <img data-src="/images/banner.jpg" data-sizes="auto" alt="Hello World"
+                             class="lazyload">
+                    
+                
+                <a href="/2020/01/01/hello-world/"></a>
+                <div class="article-nav-caption">后一篇</div>
+                <h3 class="article-nav-title">
+                    
+                        Hello World
+                    
+                </h3>
+            </div>
+        
+    </nav>
+
+
+    
+</article>
+
+
+
+
+
+
+
+
+
+
+
+</section>
+                
+                    <aside id="sidebar">
+    <div class="sidebar-wrap wow fadeInRight">
+        <div class="sidebar-author">
+            <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="John Doe" class="lazyload">
+            <div class="sidebar-author-name">John Doe</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-state">
+            <div class="sidebar-state-article">
+                <div>文章</div>
+                <div class="sidebar-state-number">3</div>
+            </div>
+            <div class="sidebar-state-category">
+                <div>分类</div>
+                <div class="sidebar-state-number">1</div>
+            </div>
+            <div class="sidebar-state-tag">
+                <div>标签</div>
+                <div class="sidebar-state-number">1</div>
+            </div>
+        </div>
+        <div class="sidebar-social">
+            
+                <div class=icon-github>
+                    <a href=https://github.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-google>
+                    <a href=https://plus.google.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-twitter>
+                    <a href=https://twitter.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-facebook>
+                    <a href=https://www.facebook.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+        </div>
+        <div class="sidebar-menu">
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">首页</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/archives"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">归档</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/about"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">关于</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/friend"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">友链</div>
+                </div>
+            
+        </div>
+    </div>
+    
+        
+    <div class="widget-wrap wow fadeInRight">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a></li></ul>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap wow fadeInRight">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/%E5%88%9D%E5%AD%A6%E8%80%85/" style="font-size: 10px;">初学者</a>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap wow fadeInRight">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li></ul>
+        </div>
+    </div>
+
+
+    
+</aside>
+
+                
+            </div>
+            <footer id="footer" class="wow fadeInUp">
+    <div style="width: 100%; overflow: hidden"><div class="footer-line"></div></div>
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            
+            <div>
+                <span class="icon-copyright"></span>
+                2020-2023
+                <span class="footer-info-sep"></span>
+                John Doe
+            </div>
+            
+                <div>
+                    基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+                    Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+                </div>
+            
+            
+                <div>
+                    <span class="icon-brush"></span>
+                    2.1k
+                    &nbsp;|&nbsp;
+                    <span class="icon-coffee"></span>
+                    00:09
+                </div>
+            
+            
+                <div>
+                    <span class="icon-eye"></span>
+                    <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+                    &nbsp;|&nbsp;
+                    <span class="icon-user"></span>
+                    <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+                </div>
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+        <nav id="mobile-nav">
+    <div class="sidebar-wrap">
+        <div class="sidebar-author">
+            <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="John Doe" class="lazyload">
+            <div class="sidebar-author-name">John Doe</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-state">
+            <div class="sidebar-state-article">
+                <div>文章</div>
+                <div class="sidebar-state-number">3</div>
+            </div>
+            <div class="sidebar-state-category">
+                <div>分类</div>
+                <div class="sidebar-state-number">1</div>
+            </div>
+            <div class="sidebar-state-tag">
+                <div>标签</div>
+                <div class="sidebar-state-number">1</div>
+            </div>
+        </div>
+        <div class="sidebar-social">
+            
+                <div class=icon-github>
+                    <a href=https://github.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-google>
+                    <a href=https://plus.google.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-twitter>
+                    <a href=https://twitter.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-facebook>
+                    <a href=https://www.facebook.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+        </div>
+        <div class="sidebar-menu">
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">首页</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/archives"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">归档</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/about"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">关于</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/friend"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">友链</div>
+                </div>
+            
+        </div>
+    </div>
+</nav>
+
+        
+<script src="https://unpkg.com/jquery@3.7.0/dist/jquery.min.js"></script>
+
+
+<script src="https://unpkg.com/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://unpkg.com/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
+    
+<script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+
+    
+<script src="https://unpkg.com/busuanzi@2.3.0/bsz.pure.mini.js"></script>
+
+
+
+
+    
+<script src="https://unpkg.com/mermaid@9.4.3/dist/mermaid.min.js"></script>
+
+    <script>
+        if (window.mermaid) {
+            mermaid.initialize({theme: 'forest'});
+        }
+    </script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <div class="site-search">
+        <div class="algolia-popup popup">
+            <div class="algolia-search">
+                <span class="algolia-search-input-icon"></span>
+                <div class="algolia-search-input" id="algolia-search-input"></div>
+            </div>
+
+            <div class="algolia-results">
+                <div id="algolia-stats"></div>
+                <div id="algolia-hits"></div>
+                <div id="algolia-pagination" class="algolia-pagination"></div>
+            </div>
+
+            <span class="popup-btn-close"></span>
+        </div>
+    </div>
+    <!-- hexo injector body_end start -->
+<script src="/js/insertHighlight.js"></script>
+<!-- hexo injector body_end end --></body>
+    </html>
+
