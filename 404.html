@@ -13,7 +13,7 @@
     
     <title>
         
-        Hexo</title>
+        灵魂收割者</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CUbuntu%20Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
     
@@ -23,14 +23,14 @@
 <link rel="stylesheet" href="/css/loader.css">
 
     <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="灵魂收割者">
 <meta property="og:url" content="http://example.com/404.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="灵魂收割者">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="PJH&amp;CCY">
 <meta name="twitter:card" content="summary">
     
-        <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+        <link rel="alternate" href="/atom.xml" title="灵魂收割者" type="application/atom+xml">
     
     
         <link rel="shortcut icon" href="/images/favicon.ico">
@@ -126,6 +126,9 @@
                        title="RSS 订阅"></a>
                 
                 
+                    <a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索">
+                    </a>
+                
             </nav>
             <div id="search-form-wrap">
                 <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
@@ -183,6 +186,34 @@
 
 
 
+
+    
+<script src="https://unpkg.com/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"></script>
+
+    
+<script src="https://unpkg.com/instantsearch.js@4.56.1/dist/instantsearch.production.min.js"></script>
+
+    
+<script src="/js/search.js"></script>
+
+    <script>
+        var CONFIG = {
+            root: '/',
+            algolia: {
+                applicationID: "5BJ1GA7GAD",
+                apiKey: "11c1cd105099eed0e56b89d24e1b68cd",
+                indexName: "My First Application",
+                hits: {
+                    "per_page": parseInt("10")
+                },
+                labels: {
+                    "input_placeholder": "搜索.....",
+                    "hits_empty": "未发现与 「${query}」相关内容",
+                    "hits_stats": "找到${hits}条结果（用时 ${time} ms）"
+                }
+            }
+        };
+    </script>
 
 
 </div>

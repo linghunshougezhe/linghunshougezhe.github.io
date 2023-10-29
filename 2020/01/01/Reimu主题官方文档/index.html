@@ -1,0 +1,704 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN"
+            
+          
+    >
+    <head>
+    <meta charset="utf-8">
+    
+
+    
+
+    
+    <title>
+        Reimu主题官方文档 |
+        
+        灵魂收割者</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CUbuntu%20Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+    
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free/css/v4-font-face.min.css">
+
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+    <meta name="description" content="安装  使用npm 1npm install hexo-theme-reimu --save 或直接克隆本仓库至&#x2F;themes文件夹下并重命名为reimu 1git clone https:&#x2F;&#x2F;github.com&#x2F;D-Sketon&#x2F;hexo-theme-reimu.git 并修改 _config.yml 中的theme 1234# Extensions## Plugins: https:&#x2F;&#x2F;h">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reimu主题官方文档">
+<meta property="og:url" content="http://example.com/2020/01/01/Reimu%E4%B8%BB%E9%A2%98%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3/index.html">
+<meta property="og:site_name" content="灵魂收割者">
+<meta property="og:description" content="安装  使用npm 1npm install hexo-theme-reimu --save 或直接克隆本仓库至&#x2F;themes文件夹下并重命名为reimu 1git clone https:&#x2F;&#x2F;github.com&#x2F;D-Sketon&#x2F;hexo-theme-reimu.git 并修改 _config.yml 中的theme 1234# Extensions## Plugins: https:&#x2F;&#x2F;h">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-12-31T19:00:00.000Z">
+<meta property="article:modified_time" content="2023-10-29T16:03:15.825Z">
+<meta property="article:author" content="PJH&amp;CCY">
+<meta property="article:tag" content="初学者">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" href="/atom.xml" title="灵魂收割者" type="application/atom+xml">
+    
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/typeface-source-code-pro@1.1.13/index.css">
+
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/katex@0.16.7/dist/katex.min.css">
+
+    
+    
+    
+    
+<script src="https://unpkg.com/pace-js@1.2.4/pace.min.js"></script>
+
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/wowjs@1.1.3/css/libs/animate.css">
+
+        
+<script src="https://unpkg.com/wowjs@1.1.3/dist/wow.min.js"></script>
+
+        <script>
+          new WOW({
+            offset: 0,
+            mobile: true,
+            live: false
+          }).init();
+        </script>
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+    <body>
+    
+<div id='loader'>
+  <div class="loading-left-bg"></div>
+  <div class="loading-right-bg"></div>
+  <div class="spinner-box">
+    <div class="loading-taichi">
+      <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+      <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+      <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+      <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+    </svg>
+    </div>
+    <div class="loading-word">少女祈祷中...</div>
+  </div>
+</div>
+</div>
+
+<script>
+  const endLoading = function() {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('load', endLoading);
+  document.getElementById('loader').addEventListener('click', endLoading);
+</script>
+
+
+    <div id="container">
+        <div id="wrap">
+            <header id="header">
+    
+        <img data-src="/holdimg/Reimu.jpg" data-sizes="auto" alt="Reimu主题官方文档" class="lazyload">
+    
+    <div id="header-outer" class="outer">
+        <div id="header-title" class="inner">
+            <div id="logo-wrap">
+                
+                    
+                    
+                        <a href="/" id="logo"><h1>Reimu主题官方文档</h1></a>
+                    
+                
+            </div>
+            
+                
+                
+            
+        </div>
+        <div id="header-inner">
+            <nav id="main-nav">
+                <a id="main-nav-toggle" class="nav-icon"></a>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/">首页</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/archives">归档</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/about">关于</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/friend">友链</a>
+                    </span>
+                
+            </nav>
+            <nav id="sub-nav">
+                
+                    <a id="nav-rss-link" class="nav-icon" href="/atom.xml"
+                       title="RSS 订阅"></a>
+                
+                
+                    <a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索">
+                    </a>
+                
+            </nav>
+            <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+            </div>
+        </div>
+    </div>
+</header>
+
+            <div id="content" class="outer">
+                <section id="main"><article id="post-Reimu主题官方文档" class="h-entry article article-type-post"
+         itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <div class="article-inner">
+        <div class="article-meta">
+            <div class="article-date wow slideInLeft">
+    <a href="/2020/01/01/Reimu%E4%B8%BB%E9%A2%98%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3/" class="article-date-link">
+        <time datetime="2019-12-31T19:00:00.000Z"
+              itemprop="datePublished">2020-01-01</time>
+    </a>
+</div>
+
+            
+    <div class="article-category wow slideInLeft">
+        <a class="article-category-link" href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a>
+    </div>
+
+
+        </div>
+        <div class="hr-line"></div>
+        
+
+        <div class="e-content article-entry" itemprop="articleBody">
+            
+                <h1 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h1>
+<h2 id="使用npm"><a class="markdownIt-Anchor" href="#使用npm"></a> 使用npm</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-theme-reimu --save</span><br></pre></td></tr></table></figure>
+<p>或直接克隆本仓库至/themes文件夹下并重命名为reimu</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/D-Sketon/hexo-theme-reimu.git</span><br></pre></td></tr></table></figure>
+<p>并修改 _config.yml 中的theme</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: reimu</span><br></pre></td></tr></table></figure>
+<h1 id="使用"><a class="markdownIt-Anchor" href="#使用"></a> 使用</h1>
+<h2 id="基本结构"><a class="markdownIt-Anchor" href="#基本结构"></a> 基本结构</h2>
+<p>为了保证显示正确，请参考 _example 在 _source 中分别建立 _data、about 和 friend 文件夹</p>
+<h3 id="_data"><a class="markdownIt-Anchor" href="#_data"></a> _data</h3>
+<ul>
+<li>avatar 文件夹中存储作者头像，默认命名 avatar.jpg，可在【 内层 _config.yml 】中做如下配置</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">avatar: <span class="string">&quot;avatar.jpg&quot;</span> <span class="comment"># 默认就是在avatar文件夹内寻找，请不要包含路径，否则会404</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>covers 文件夹中存储文章封面</li>
+<li>covers.yml 中存储文章封面url</li>
+</ul>
+<h3 id="about"><a class="markdownIt-Anchor" href="#about"></a> about</h3>
+<p><a target="_blank" rel="noopener" href="http://index.md">index.md</a> 作为关于页面</p>
+<h3 id="friend"><a class="markdownIt-Anchor" href="#friend"></a> friend</h3>
+<p><a target="_blank" rel="noopener" href="http://index.md">index.md</a> 作为友链页面，在 _data.yml 中填入友链信息即可在页面上显示对应好友卡片</p>
+<h1 id="封面-头图和图标"><a class="markdownIt-Anchor" href="#封面-头图和图标"></a> 封面、头图和图标</h1>
+<h2 id="封面"><a class="markdownIt-Anchor" href="#封面"></a> 封面</h2>
+<h3 id="封面显示逻辑如下"><a class="markdownIt-Anchor" href="#封面显示逻辑如下"></a> 封面显示逻辑如下</h3>
+<ul>
+<li>如果文章的 Front matter 中包含 cover 的url，则该文章头图和首页缩略图均显示该url</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line">cover: https://example.com</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果文章的 Front matter 中包含 cover 为false，则该文章不显示头图（首页上仍然是随机图片）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line">cover: <span class="literal">false</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果文章的 Front matter 中包含 cover 为rgb(xxx,xxx,xxx)，则该文章头图为对应的渐变纯色（首页上仍然是随机图片）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line">cover: rgb(255,117,117)</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>否则查找 covers 文件夹和 covers.yml，并从中随机挑选图片;若上述文件均不存在，则显示头图</p>
+<h3 id="头图"><a class="markdownIt-Anchor" href="#头图"></a> 头图</h3>
+<ul>
+<li>头图保存于 themes/reimu/source/images/banner.jpg，可在【 内层 _config.yml 】中修改</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">banner: <span class="string">&quot;/images/banner.jpg&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="图标"><a class="markdownIt-Anchor" href="#图标"></a> 图标</h3>
+<ul>
+<li>图标保存于 themes/reimu/source/images/favicon.ico，可在【 内层 _config.yml 】中修改</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">favicon: <span class="string">&quot;/images/favicon.ico&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="置顶"><a class="markdownIt-Anchor" href="#置顶"></a> 置顶</h3>
+<ul>
+<li>在文章的Front-matter中添加 sticky: true</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line">sticky: <span class="literal">true</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h1 id="代码高亮"><a class="markdownIt-Anchor" href="#代码高亮"></a> 代码高亮</h1>
+<p>为保证代码块的正确显示，请保证【 外层 _config.yml 】中为如下配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">highlight:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  wrap: <span class="literal">true</span></span><br><span class="line">  hljs: <span class="literal">false</span></span><br><span class="line">prismjs:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h1 id="站内评论"><a class="markdownIt-Anchor" href="#站内评论"></a> 站内评论</h1>
+<ul>
+<li>若基于 <a target="_blank" rel="noopener" href="https://valine.js.org/">Valine</a></li>
+<li>请参考其官方文档完成 LeanCloud 的配置，并在【 内层 _config_yml 】中将 valine.enable 改为 true，并填入自己的 appId 和 appKey</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">valine:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  appId: <span class="string">&#x27;your appId&#x27;</span></span><br><span class="line">  appKey: <span class="string">&#x27;your appKey&#x27;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>若基于 <a target="_blank" rel="noopener" href="https://waline.js.org/">Waline</a></li>
+<li>请参考其<a target="_blank" rel="noopener" href="https://waline.js.org/guide/get-started/">官方文档</a>完成 LeanCloud 的配置，并在【 内层 _config_yml 】中将 waline.enable 改为 true，并填入自己的 serverURL</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">waline:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  serverURL: <span class="string">&#x27;your server url&#x27;</span></span><br><span class="line">  lang: zh-CN</span><br><span class="line">  locale: &#123;&#125; <span class="comment"># https://waline.js.org/guide/features/i18n.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80</span></span><br><span class="line">  emoji:</span><br><span class="line">    - https://unpkg.com/@waline/emojis@1.0.1/weibo</span><br><span class="line">    - https://unpkg.com/@waline/emojis@1.0.1/alus</span><br><span class="line">    - https://unpkg.com/@waline/emojis@1.0.1/bilibili</span><br><span class="line">    - https://unpkg.com/@waline/emojis@1.0.1/qq</span><br><span class="line">    - https://unpkg.com/@waline/emojis@1.0.1/tieba</span><br><span class="line">    - https://unpkg.com/@waline/emojis@1.0.1/tw-emoji</span><br><span class="line">  meta: </span><br><span class="line">    - nick</span><br><span class="line">    - mail</span><br><span class="line">    - <span class="built_in">link</span></span><br><span class="line">  requiredMeta:</span><br><span class="line">    - nick</span><br><span class="line">    - mail</span><br><span class="line">  wordLimit: 0</span><br><span class="line">  pageSize: 10</span><br></pre></td></tr></table></figure>
+<ul>
+<li>若基于 <a target="_blank" rel="noopener" href="https://twikoo.js.org/">twikoo</a></li>
+<li>请参考其<a target="_blank" rel="noopener" href="https://twikoo.js.org/quick-start.html">官方文档</a>完成 腾讯云 或 Vercel 部署，并在【 内层 _config_yml 】中将 twikoo.enable 改为 true，并填入自己的 envId</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">twikoo:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  envId:  <span class="comment"># 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）</span></span><br><span class="line">  region: </span><br></pre></td></tr></table></figure>
+<h1 id="站内搜索"><a class="markdownIt-Anchor" href="#站内搜索"></a> 站内搜索</h1>
+<p>站内搜索基于 <a target="_blank" rel="noopener" href="https://www.algolia.com/">Algolia</a>，请安装 <a target="_blank" rel="noopener" href="https://github.com/thom4parisot/hexo-algolia">hexo-algolia</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-algolia --save</span><br></pre></td></tr></table></figure>
+<p>并参考其 <a target="_blank" rel="noopener" href="https://github.com/thom4parisot/hexo-algolia#readme">README</a> 和 <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35479468/article/details/107335663">为Hexo增加algolia搜索功能</a> 完成对 Algolia 账号的配置，并在【 外层 _confg.yml 】中添加如下配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">algolia:</span><br><span class="line">  applicationID: <span class="string">&#x27;your applicationID&#x27;</span></span><br><span class="line">  apiKey: <span class="string">&#x27;your apiKey&#x27;</span></span><br><span class="line">  adminApiKey: <span class="string">&#x27;your adminApiKey&#x27;</span></span><br><span class="line">  indexName: <span class="string">&#x27;your indexName&#x27;</span></span><br><span class="line">  chunkSize: 5000</span><br></pre></td></tr></table></figure>
+<p>在【 内层 _config_yml 】中将 algolia_search.enable 改为 true</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">algolia_search:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>注意：搜索跳转链接为永久链接，所以请保证【 外层 _config.yml 】中的 url 填写正确</li>
+</ul>
+<h1 id="数学公式"><a class="markdownIt-Anchor" href="#数学公式"></a> 数学公式</h1>
+<p>数学公式基于 <a target="_blank" rel="noopener" href="https://github.com/KaTeX/KaTeX">Katex</a>，请安装 <a target="_blank" rel="noopener" href="https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus">hexo-renderer-markdown-it-plus</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-markdown-it-plus --save</span><br></pre></td></tr></table></figure>
+<p>在【 内层 _config_yml 】中将 math.enable 改为 true</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">math:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h1 id="mermaid"><a class="markdownIt-Anchor" href="#mermaid"></a> Mermaid</h1>
+<p>请安装 <a target="_blank" rel="noopener" href="https://github.com/webappdevelp/hexo-filter-mermaid-diagrams">hexo-filter-mermaid-diagrams</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-filter-mermaid-diagrams --save</span><br></pre></td></tr></table></figure>
+<p>在【 内层 _config_yml 】中将 mermaid.enable 改为 true</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mermaid:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h1 id="rss"><a class="markdownIt-Anchor" href="#rss"></a> RSS</h1>
+<p>请安装 <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
+<ul>
+<li>并参考其 <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-generator-feed#readme">README</a> 在【 外层 _config.yml 】完成对 feed 的配置</li>
+<li>在【 内层 _config.yml 】中填入生成的 xml</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rss: atom.xml</span><br></pre></td></tr></table></figure>
+<h1 id="hexo使用攻略-添加分类及标签"><a class="markdownIt-Anchor" href="#hexo使用攻略-添加分类及标签"></a> Hexo使用攻略-添加分类及标签</h1>
+<h2 id="创建分类选项"><a class="markdownIt-Anchor" href="#创建分类选项"></a> 创建“分类”选项</h2>
+<h3 id="生成分类页并添加tpye属性"><a class="markdownIt-Anchor" href="#生成分类页并添加tpye属性"></a> 生成“分类”页并添加tpye属性</h3>
+<p>打开命令行，进入博客所在文件夹。执行命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+<p>成功后会提示：INFO  Created: ~/Documents/blog/source/categories/index.md<br />
+根据上面的路径，找到index.md这个文件，添加type: &quot;categories&quot;到内容中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章分类</span><br><span class="line"><span class="built_in">date</span>: 2017-05-27 13:47:40</span><br><span class="line"><span class="built_in">type</span>: <span class="string">&quot;categories&quot;</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="给文章添加categories属性"><a class="markdownIt-Anchor" href="#给文章添加categories属性"></a> 给文章添加“categories”属性</h3>
+<p>hexo一篇文章不会产生两个分类，而是把分类嵌套（即该文章属于 “- web前端”下的 “-xxx ”分类）。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: jQuery对表单的操作及更多应用</span><br><span class="line"><span class="built_in">date</span>: 2017-05-26 12:12:57</span><br><span class="line">categories: </span><br><span class="line">- web前端</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h2 id="创建标签选项"><a class="markdownIt-Anchor" href="#创建标签选项"></a> 创建“标签”选项</h2>
+<h3 id="生成标签页并添加tpye属性"><a class="markdownIt-Anchor" href="#生成标签页并添加tpye属性"></a> 生成“标签”页并添加tpye属性</h3>
+<p>打开命令行，进入博客所在文件夹。执行命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>INFO  Created: ~/Documents/blog/source/tags/index.md<br />
+根据上面的路径，找到index.md这个文件，添加type: &quot;tags&quot;到内容中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章分类</span><br><span class="line"><span class="built_in">date</span>: 2017-05-27 13:47:40</span><br><span class="line"><span class="built_in">type</span>: <span class="string">&quot;tags&quot;</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="给文章添加tags属性"><a class="markdownIt-Anchor" href="#给文章添加tags属性"></a> 给文章添加“tags”属性</h3>
+<p>打开需要添加标签的文章，为其添加tags属性。下方的tags:下方的- jQuery - 表格</p>
+<ul>
+<li>表单验证就是这篇文章的标签了</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: jQuery对表单的操作及更多应用</span><br><span class="line"><span class="built_in">date</span>: 2017-05-26 12:12:57</span><br><span class="line">categories: </span><br><span class="line">- web前端</span><br><span class="line">tags:</span><br><span class="line">- jQuery</span><br><span class="line">- 表格</span><br><span class="line">- 表单验证</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>我们可以打开scaffolds/post.md新建页面的模板文件，添加【 categories: 】<br />
+执行 【 hexo new 文章名 】 命令生成的文件，页面里就有categories:项了。</p>
+
+            
+        </div>
+        <footer class="article-footer">
+            <a data-url="http://example.com/2020/01/01/Reimu%E4%B8%BB%E9%A2%98%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3/" data-id="clobo9d600003kcnm29982gw1" data-title="Reimu主题官方文档"
+               class="article-share-link">分享</a>
+            
+            
+            
+            
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%88%9D%E5%AD%A6%E8%80%85/" rel="tag">初学者</a></li></ul>
+
+
+        </footer>
+    </div>
+    
+        
+    <nav id="article-nav" class="wow fadeInUp">
+        
+            <div class="article-nav-link-wrap article-nav-link-left">
+                
+                    <img data-src="/holdimg/Reimu-适配本机.png" data-sizes="auto" alt="Reimu主题 - 适配本机"
+                         class="lazyload">
+                
+                <a href="/2020/01/01/Reimu%E4%B8%BB%E9%A2%98%20-%20%E9%80%82%E9%85%8D%E6%9C%AC%E6%9C%BA/"></a>
+                <div class="article-nav-caption">前一篇</div>
+                <h3 class="article-nav-title">
+                    
+                        Reimu主题 - 适配本机
+                    
+                </h3>
+            </div>
+        
+        
+            <div class="article-nav-link-wrap article-nav-link-right">
+                
+                    <img data-src="/holdimg/Hexo GitHub.webp" data-sizes="auto" alt="Hexo + GitHub部署教程"
+                         class="lazyload">
+                
+                <a href="/2020/01/01/hexo%20+%20github%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/"></a>
+                <div class="article-nav-caption">后一篇</div>
+                <h3 class="article-nav-title">
+                    
+                        Hexo + GitHub部署教程
+                    
+                </h3>
+            </div>
+        
+    </nav>
+
+
+    
+</article>
+
+
+
+
+
+
+
+
+
+
+
+</section>
+                
+                    <aside id="sidebar">
+    <div class="sidebar-wrap wow fadeInRight">
+        <div class="sidebar-author">
+            <img data-src="/avatar/avatar.png" data-sizes="auto" alt="PJH&amp;CCY" class="lazyload">
+            <div class="sidebar-author-name">PJH&amp;CCY</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-state">
+            <div class="sidebar-state-article">
+                <div>文章</div>
+                <div class="sidebar-state-number">4</div>
+            </div>
+            <div class="sidebar-state-category">
+                <div>分类</div>
+                <div class="sidebar-state-number">1</div>
+            </div>
+            <div class="sidebar-state-tag">
+                <div>标签</div>
+                <div class="sidebar-state-number">1</div>
+            </div>
+        </div>
+        <div class="sidebar-social">
+            
+                <div class=icon-github>
+                    <a href=https://github.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-google>
+                    <a href=https://plus.google.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-twitter>
+                    <a href=https://twitter.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-facebook>
+                    <a href=https://www.facebook.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+        </div>
+        <div class="sidebar-menu">
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">首页</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/archives"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">归档</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/about"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">关于</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/friend"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">友链</div>
+                </div>
+            
+        </div>
+    </div>
+    
+        
+    <div class="widget-wrap wow fadeInRight">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/web%E5%89%8D%E7%AB%AF/">web前端</a></li></ul>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap wow fadeInRight">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/%E5%88%9D%E5%AD%A6%E8%80%85/" style="font-size: 10px;">初学者</a>
+        </div>
+    </div>
+
+
+    
+        
+    <div class="widget-wrap wow fadeInRight">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li></ul>
+        </div>
+    </div>
+
+
+    
+</aside>
+
+                
+            </div>
+            <footer id="footer" class="wow fadeInUp">
+    <div style="width: 100%; overflow: hidden"><div class="footer-line"></div></div>
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            
+            <div>
+                <span class="icon-copyright"></span>
+                2020-2023
+                <span class="footer-info-sep"></span>
+                PJH&amp;CCY
+            </div>
+            
+                <div>
+                    基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+                    Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+                </div>
+            
+            
+                <div>
+                    <span class="icon-brush"></span>
+                    3.2k
+                    &nbsp;|&nbsp;
+                    <span class="icon-coffee"></span>
+                    00:14
+                </div>
+            
+            
+                <div>
+                    <span class="icon-eye"></span>
+                    <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+                    &nbsp;|&nbsp;
+                    <span class="icon-user"></span>
+                    <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+                </div>
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+        <nav id="mobile-nav">
+    <div class="sidebar-wrap">
+        <div class="sidebar-author">
+            <img data-src="/avatar/avatar.png" data-sizes="auto" alt="PJH&amp;CCY" class="lazyload">
+            <div class="sidebar-author-name">PJH&amp;CCY</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-state">
+            <div class="sidebar-state-article">
+                <div>文章</div>
+                <div class="sidebar-state-number">4</div>
+            </div>
+            <div class="sidebar-state-category">
+                <div>分类</div>
+                <div class="sidebar-state-number">1</div>
+            </div>
+            <div class="sidebar-state-tag">
+                <div>标签</div>
+                <div class="sidebar-state-number">1</div>
+            </div>
+        </div>
+        <div class="sidebar-social">
+            
+                <div class=icon-github>
+                    <a href=https://github.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-google>
+                    <a href=https://plus.google.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-twitter>
+                    <a href=https://twitter.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-facebook>
+                    <a href=https://www.facebook.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+        </div>
+        <div class="sidebar-menu">
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">首页</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/archives"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">归档</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/about"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">关于</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/friend"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">友链</div>
+                </div>
+            
+        </div>
+    </div>
+</nav>
+
+        
+<script src="https://unpkg.com/jquery@3.7.0/dist/jquery.min.js"></script>
+
+
+<script src="https://unpkg.com/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://unpkg.com/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
+    
+<script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+
+    
+<script src="https://unpkg.com/busuanzi@2.3.0/bsz.pure.mini.js"></script>
+
+
+
+
+    
+<script src="https://unpkg.com/mermaid@9.4.3/dist/mermaid.min.js"></script>
+
+    <script>
+        if (window.mermaid) {
+            mermaid.initialize({theme: 'forest'});
+        }
+    </script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<script src="https://unpkg.com/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"></script>
+
+    
+<script src="https://unpkg.com/instantsearch.js@4.56.1/dist/instantsearch.production.min.js"></script>
+
+    
+<script src="/js/search.js"></script>
+
+    <script>
+        var CONFIG = {
+            root: '/',
+            algolia: {
+                applicationID: "5BJ1GA7GAD",
+                apiKey: "11c1cd105099eed0e56b89d24e1b68cd",
+                indexName: "My First Application",
+                hits: {
+                    "per_page": parseInt("10")
+                },
+                labels: {
+                    "input_placeholder": "搜索.....",
+                    "hits_empty": "未发现与 「${query}」相关内容",
+                    "hits_stats": "找到${hits}条结果（用时 ${time} ms）"
+                }
+            }
+        };
+    </script>
+
+
+    </div>
+    <div class="site-search">
+        <div class="algolia-popup popup">
+            <div class="algolia-search">
+                <span class="algolia-search-input-icon"></span>
+                <div class="algolia-search-input" id="algolia-search-input"></div>
+            </div>
+
+            <div class="algolia-results">
+                <div id="algolia-stats"></div>
+                <div id="algolia-hits"></div>
+                <div id="algolia-pagination" class="algolia-pagination"></div>
+            </div>
+
+            <span class="popup-btn-close"></span>
+        </div>
+    </div>
+    <!-- hexo injector body_end start -->
+<script src="/js/insertHighlight.js"></script>
+<!-- hexo injector body_end end --></body>
+    </html>
+
