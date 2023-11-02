@@ -1,6 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Markdown_图片</title>
+    <url>/2020/01/31/Markdown-%E5%9B%BE%E7%89%87/</url>
+    <content><![CDATA[<h1 id="center一份-markdown-学习笔记center"><a class="markdownIt-Anchor" href="#center一份-markdown-学习笔记center"></a> <center><a href="https://keatonlao.gitee.io/a-study-note-for-markdown/introduction/">一份 Markdown 学习笔记</a></center></h1>
+<h1 id="markdown-图片"><a class="markdownIt-Anchor" href="#markdown-图片"></a> Markdown 图片</h1>
+<p>图片的语法和链接很像。 alt text 是替换文本；alt 属性规定在图像无法显示时的替代文本。<br />
+虽然 alt text 可以不填，但推荐还是填上。 Title 是可选项。</p>
+<h2 id="行内形式"><a class="markdownIt-Anchor" href="#行内形式"></a> 行内形式</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">![alt text](/path/to/img.jpg <span class="string">&quot;Title&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="参考形式"><a class="markdownIt-Anchor" href="#参考形式"></a> 参考形式</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">![alt text][<span class="built_in">id</span>]</span><br><span class="line"></span><br><span class="line">[<span class="built_in">id</span>]: /path/to/img.jpg <span class="string">&quot;Title&quot;</span></span><br></pre></td></tr></table></figure>
+<h1 id="插入互联网上图片"><a class="markdownIt-Anchor" href="#插入互联网上图片"></a> 插入互联网上图片</h1>
+<p>(右键 copy 图片地址)<br />
+在笔记本上装openSUSE</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">openSUSE Leap:opensuse-laptop</span><br></pre></td></tr></table></figure>
+<p><img src="https://www.opensuse.org/build/images/opensuse-laptop.gif" alt="opensuse-laptop" /></p>
+<p>在 Typora 软件中，复制图像的链接，选中文字按 ctrl-shift-I 快速插入图像。</p>
+<p>尽管互联网上有大量资源，为了确保文章图片不丢失，同时避免侵权，尽量上传自己的图片。</p>
+<h1 id="控制图片的大小-对齐方式"><a class="markdownIt-Anchor" href="#控制图片的大小-对齐方式"></a> 控制图片的大小 对齐方式</h1>
+<p>MarkDown 中显示图片的语法有时候需要更改图片大小和位置。</p>
+<h2 id="通过-img-标签控制宽高"><a class="markdownIt-Anchor" href="#通过-img-标签控制宽高"></a> 通过 img 标签控制宽高</h2>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;img src=<span class="string">&quot;http://pic15.photophoto.cn/20100615/0006019058815826_b.jpg&quot;</span>  height=<span class="string">&quot;330&quot;</span> width=<span class="string">&quot;495&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
+<img src="http://pic15.photophoto.cn/20100615/0006019058815826_b.jpg"  height="330" width="495">
+<h2 id="通过-div-标签和-align-属性控制对齐方式"><a class="markdownIt-Anchor" href="#通过-div-标签和-align-属性控制对齐方式"></a> 通过 div 标签和 align 属性控制对齐方式</h2>
+<p>单张图片：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">图片添加后默认靠左</span><br><span class="line"></span><br><span class="line">&lt;div align=center&gt;![alt text](/path/to/img.jpg <span class="string">&quot;Title&quot;</span>) <span class="comment"># center = 图片居中</span></span><br><span class="line"></span><br><span class="line">&lt;div align=right&gt;![alt text](/path/to/img.jpg <span class="string">&quot;Title&quot;</span>) <span class="comment"># right = 图片靠右</span></span><br></pre></td></tr></table></figure>
+<p>多张图片可以这样写：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;div align=<span class="string">&quot;center&quot;</span>&gt;</span><br><span class="line">    &lt;img src=<span class="string">&quot;http://pp.myapp.com/ma_pic2/0/shot_42391053_1_1488499316/550&quot;</span> height=<span class="string">&quot;330&quot;</span> width=<span class="string">&quot;190&quot;</span> &gt;</span><br><span class="line">    &lt;img src=<span class="string">&quot;http://pp.myapp.com/ma_pic2/0/shot_42391053_2_1488499316/550&quot;</span> height=<span class="string">&quot;330&quot;</span> width=<span class="string">&quot;190&quot;</span> &gt;</span><br><span class="line">    &lt;img src=<span class="string">&quot;http://pp.myapp.com/ma_pic2/0/shot_42391053_3_1488499316/550&quot;</span> height=<span class="string">&quot;330&quot;</span> width=<span class="string">&quot;190&quot;</span> &gt;</span><br><span class="line"> &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="其他属性"><a class="markdownIt-Anchor" href="#其他属性"></a> 其他属性</h2>
+<ul>
+<li>
+<p>根据 MarkDown 编辑器解析语法的方式不同，有些编辑器还支持别的属性</p>
+</li>
+<li>
+<p>比如在 img 标签中增加 style=“margin-left:45px” ，在 atom 中配合 GitHub MarkDown 有效。</p>
+</li>
+<li>
+<p><font color="red">甚至相同的 html 属性在不同的编辑器内展示效果也不一样。如果想传递一个 md 文件给别人的话， 尽量不要加别的 html 属性进去，最好是测试满意后转换为 pdf 格式发给对方。</font></p>
+</li>
+</ul>
+<h1 id="see-also"><a class="markdownIt-Anchor" href="#see-also"></a> See also</h1>
+<p><a href="https://blog.csdn.net/sunsteam/article/details/73112787">Markdown 中控制图片的大小 对齐方式</a><br />
+<a href="https://blog.csdn.net/qq_35451572/article/details/79443467">Markdown-图片设置（大小，居中）</a></p>
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>初学者</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Reimu主题 - 适配本机</title>
     <url>/2020/01/01/Reimu%E4%B8%BB%E9%A2%98%20-%20%E9%80%82%E9%85%8D%E6%9C%AC%E6%9C%BA/</url>
     <content><![CDATA[<h1 id="查看系统官方教程"><a class="markdownIt-Anchor" href="#查看系统官方教程"></a> <a href="https://github.com/D-Sketon/hexo-theme-reimu">查看系统官方教程</a></h1>
@@ -239,82 +290,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Markdown_图片</title>
-    <url>/2020/01/31/Markdown-%E5%9B%BE%E7%89%87/</url>
-    <content><![CDATA[<h1 id="center一份-markdown-学习笔记center"><a class="markdownIt-Anchor" href="#center一份-markdown-学习笔记center"></a> <center><a href="https://keatonlao.gitee.io/a-study-note-for-markdown/introduction/">一份 Markdown 学习笔记</a></center></h1>
-<h1 id="markdown-图片"><a class="markdownIt-Anchor" href="#markdown-图片"></a> Markdown 图片</h1>
-<p>图片的语法和链接很像。 alt text 是替换文本；alt 属性规定在图像无法显示时的替代文本。<br />
-虽然 alt text 可以不填，但推荐还是填上。 Title 是可选项。</p>
-<h2 id="行内形式"><a class="markdownIt-Anchor" href="#行内形式"></a> 行内形式</h2>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">![alt text](/path/to/img.jpg <span class="string">&quot;Title&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="参考形式"><a class="markdownIt-Anchor" href="#参考形式"></a> 参考形式</h2>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">![alt text][<span class="built_in">id</span>]</span><br><span class="line"></span><br><span class="line">[<span class="built_in">id</span>]: /path/to/img.jpg <span class="string">&quot;Title&quot;</span></span><br></pre></td></tr></table></figure>
-<h1 id="插入互联网上图片"><a class="markdownIt-Anchor" href="#插入互联网上图片"></a> 插入互联网上图片</h1>
-<p>(右键 copy 图片地址)<br />
-在笔记本上装openSUSE</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">openSUSE Leap:opensuse-laptop</span><br></pre></td></tr></table></figure>
-<p><img src="https://www.opensuse.org/build/images/opensuse-laptop.gif" alt="opensuse-laptop" /></p>
-<p>在 Typora 软件中，复制图像的链接，选中文字按 ctrl-shift-I 快速插入图像。</p>
-<p>尽管互联网上有大量资源，为了确保文章图片不丢失，同时避免侵权，尽量上传自己的图片。</p>
-<h1 id="控制图片的大小-对齐方式"><a class="markdownIt-Anchor" href="#控制图片的大小-对齐方式"></a> 控制图片的大小 对齐方式</h1>
-<p>MarkDown 中显示图片的语法有时候需要更改图片大小和位置。</p>
-<h2 id="通过-img-标签控制宽高"><a class="markdownIt-Anchor" href="#通过-img-标签控制宽高"></a> 通过 img 标签控制宽高</h2>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;img src=<span class="string">&quot;http://pic15.photophoto.cn/20100615/0006019058815826_b.jpg&quot;</span>  height=<span class="string">&quot;330&quot;</span> width=<span class="string">&quot;495&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
-<img src="http://pic15.photophoto.cn/20100615/0006019058815826_b.jpg"  height="330" width="495">
-<h2 id="通过-div-标签和-align-属性控制对齐方式"><a class="markdownIt-Anchor" href="#通过-div-标签和-align-属性控制对齐方式"></a> 通过 div 标签和 align 属性控制对齐方式</h2>
-<p>单张图片：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">图片添加后默认靠左</span><br><span class="line"></span><br><span class="line">&lt;div align=center&gt;![alt text](/path/to/img.jpg <span class="string">&quot;Title&quot;</span>) <span class="comment"># center = 图片居中</span></span><br><span class="line"></span><br><span class="line">&lt;div align=right&gt;![alt text](/path/to/img.jpg <span class="string">&quot;Title&quot;</span>) <span class="comment"># right = 图片靠右</span></span><br></pre></td></tr></table></figure>
-<p>多张图片可以这样写：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;div align=<span class="string">&quot;center&quot;</span>&gt;</span><br><span class="line">    &lt;img src=<span class="string">&quot;http://pp.myapp.com/ma_pic2/0/shot_42391053_1_1488499316/550&quot;</span> height=<span class="string">&quot;330&quot;</span> width=<span class="string">&quot;190&quot;</span> &gt;</span><br><span class="line">    &lt;img src=<span class="string">&quot;http://pp.myapp.com/ma_pic2/0/shot_42391053_2_1488499316/550&quot;</span> height=<span class="string">&quot;330&quot;</span> width=<span class="string">&quot;190&quot;</span> &gt;</span><br><span class="line">    &lt;img src=<span class="string">&quot;http://pp.myapp.com/ma_pic2/0/shot_42391053_3_1488499316/550&quot;</span> height=<span class="string">&quot;330&quot;</span> width=<span class="string">&quot;190&quot;</span> &gt;</span><br><span class="line"> &lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="其他属性"><a class="markdownIt-Anchor" href="#其他属性"></a> 其他属性</h2>
-<ul>
-<li>
-<p>根据 MarkDown 编辑器解析语法的方式不同，有些编辑器还支持别的属性</p>
-</li>
-<li>
-<p>比如在 img 标签中增加 style=“margin-left:45px” ，在 atom 中配合 GitHub MarkDown 有效。</p>
-</li>
-<li>
-<p><font color="red">甚至相同的 html 属性在不同的编辑器内展示效果也不一样。如果想传递一个 md 文件给别人的话， 尽量不要加别的 html 属性进去，最好是测试满意后转换为 pdf 格式发给对方。</font></p>
-</li>
-</ul>
-<h1 id="see-also"><a class="markdownIt-Anchor" href="#see-also"></a> See also</h1>
-<p><a href="https://blog.csdn.net/sunsteam/article/details/73112787">Markdown 中控制图片的大小 对齐方式</a><br />
-<a href="https://blog.csdn.net/qq_35451572/article/details/79443467">Markdown-图片设置（大小，居中）</a></p>
-]]></content>
-      <categories>
-        <category>web前端</category>
-      </categories>
-      <tags>
-        <tag>初学者</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/01/01/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
-<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>web前端</category>
-      </categories>
-      <tags>
-        <tag>初学者</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo + GitHub部署教程</title>
     <url>/2020/01/01/hexo%20+%20github%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<p>友情教学链接：</p>
@@ -384,8 +359,45 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2020/01/01/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
+<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>初学者</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我们相爱啦</title>
+    <url>/2022/01/30/%E6%88%91%E4%BB%AC%E7%9B%B8%E7%88%B1%E5%95%A6/</url>
+    <content><![CDATA[<p><img src="%E6%88%91%E4%BB%AC%E7%9B%B8%E7%88%B1%E5%95%A6.gif" alt="" /></p>
+]]></content>
+      <categories>
+        <category>恋爱日记</category>
+      </categories>
+      <tags>
+        <tag>相爱</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>初识女仔们</title>
-    <url>/2023/11/01/%E5%88%9D%E8%AF%86%E5%A5%B3%E4%BB%94%E4%BB%AC/</url>
+    <url>/2022/01/28/%E5%88%9D%E8%AF%86%E5%A5%B3%E4%BB%94%E4%BB%AC/</url>
     <content><![CDATA[<p><img src="1.jpg" alt="" /><br />
 <img src="2.jpg" alt="" /><br />
 <img src="3.jpg" alt="" /><br />
@@ -400,18 +412,6 @@
       </categories>
       <tags>
         <tag>相遇</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我们相爱啦</title>
-    <url>/2022/01/30/%E6%88%91%E4%BB%AC%E7%9B%B8%E7%88%B1%E5%95%A6/</url>
-    <content><![CDATA[<p><img src="%E6%88%91%E4%BB%AC%E7%9B%B8%E7%88%B1%E5%95%A6.gif" alt="" /></p>
-]]></content>
-      <categories>
-        <category>恋爱日记</category>
-      </categories>
-      <tags>
-        <tag>相爱</tag>
       </tags>
   </entry>
   <entry>

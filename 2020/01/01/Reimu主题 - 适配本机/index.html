@@ -14,7 +14,7 @@
     <title>
         Reimu主题 - 适配本机 |
         
-        灵魂收割者</title>
+        甪蕞好の埘茪，囍歡①嗰値嘚伱囍歡の亽</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CUbuntu%20Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
     
@@ -27,7 +27,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Reimu主题 - 适配本机">
 <meta property="og:url" content="http://example.com/2020/01/01/Reimu%E4%B8%BB%E9%A2%98%20-%20%E9%80%82%E9%85%8D%E6%9C%AC%E6%9C%BA/index.html">
-<meta property="og:site_name" content="灵魂收割者">
+<meta property="og:site_name" content="甪蕞好の埘茪，囍歡①嗰値嘚伱囍歡の亽">
 <meta property="og:description" content="查看系统官方教程  安装主题 cmd 【 …&#x2F;blog 文件下 】下载主题到本地 1git clone https:&#x2F;&#x2F;github.com&#x2F;D-Sketon&#x2F;hexo-theme-reimu.git  使用主题 修改 【 …&#x2F;blog&#x2F;_config.yml 】文件中的内容： 1234# Extensions## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;## Them">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-31T20:00:00.000Z">
@@ -36,7 +36,7 @@
 <meta property="article:tag" content="初学者">
 <meta name="twitter:card" content="summary">
     
-        <link rel="alternate" href="/atom.xml" title="灵魂收割者" type="application/atom+xml">
+        <link rel="alternate" href="/atom.xml" title="甪蕞好の埘茪，囍歡①嗰値嘚伱囍歡の亽" type="application/atom+xml">
     
     
         <link rel="shortcut icon" href="/images/favicon.ico">
@@ -121,7 +121,61 @@
                 
                     
                     
-                        <a href="/" id="logo"><h1>Reimu主题 - 适配本机</h1></a>
+                        <a href="/" id="logo">
+                            <h1>
+                                <font color=#FFFF00 size=7 face="黑体">Reimu主题 - 适配本机</font>
+                                
+                            </h1>
+                        </a>
+                        
+                        <body>
+                            <font color=#0099ff size=7 face="华文彩云">
+                                <p>今天是我们恋爱的第 <a id="timeDisplay_day"></a>天</p>
+                            </font>
+
+                            <font color="RED" size=7 face="宋体" >
+                                
+                                <div id="timeDisplay" ></div>
+                                
+                            </font>
+            
+                            <script>
+                               // 设置初始时间为2022年1月30日13时14分52秒
+                                const startDate = new Date(2022, 0, 30, 13, 14, 52);
+                                const timeDisplay = document.getElementById('timeDisplay');
+
+                                function updateTime() {
+                                    // 获取当前时间
+                                    const now = new Date();
+                                    // 计算时间差
+                                    const diff = now - startDate;
+                                    // 计算年、月、日、时、分、秒
+                                    const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+                                    const months = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+                                    const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+                                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                                    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                                    const timeDifference = Math.abs(now - startDate);
+                                    const daysPassed = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+                                    // 格式化输出
+                                    
+                                    timeDisplay.innerHTML = `经过了${years}年${months}月${days}天${hours}时${minutes}分${seconds}秒`;
+                                    timeDisplay_day.innerHTML = `${daysPassed} `;
+                                }
+
+                                // 初始化时间显示
+                                updateTime();
+                                // 每过一秒刷新时间
+                                setInterval(updateTime, 1000);
+                            </script>  
+                        
+                        <!-- hexo injector body_end start -->
+<script src="/js/insertHighlight.js"></script>
+<!-- hexo injector body_end end --></body>
+                        
                     
                 
             </div>
@@ -294,7 +348,7 @@
             
         </div>
         <footer class="article-footer">
-            <a data-url="http://example.com/2020/01/01/Reimu%E4%B8%BB%E9%A2%98%20-%20%E9%80%82%E9%85%8D%E6%9C%AC%E6%9C%BA/" data-id="clofvnavr0001iknmazr94cru" data-title="Reimu主题 - 适配本机"
+            <a data-url="http://example.com/2020/01/01/Reimu%E4%B8%BB%E9%A2%98%20-%20%E9%80%82%E9%85%8D%E6%9C%AC%E6%9C%BA/" data-id="clohcdaff0003nwnmb6xneoc0" data-title="Reimu主题 - 适配本机"
                class="article-share-link">分享</a>
             
             
@@ -439,7 +493,7 @@
     <div class="widget-wrap wow fadeInRight">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/01/">一月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a></li></ul>
         </div>
     </div>
 
@@ -475,14 +529,6 @@
                     00:19
                 </div>
             
-            
-                <div>
-                    <span class="icon-eye"></span>
-                    <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
-                    &nbsp;|&nbsp;
-                    <span class="icon-user"></span>
-                    <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
-                </div>
             
         </div>
     </div>
@@ -565,10 +611,6 @@
 
 
 
-    
-<script src="https://unpkg.com/busuanzi@2.3.0/bsz.pure.mini.js"></script>
-
-
 
 
     
@@ -644,8 +686,6 @@
             <span class="popup-btn-close"></span>
         </div>
     </div>
-    <!-- hexo injector body_end start -->
-<script src="/js/insertHighlight.js"></script>
-<!-- hexo injector body_end end --></body>
+    </body>
     </html>
 
