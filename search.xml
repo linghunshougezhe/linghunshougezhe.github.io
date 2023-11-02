@@ -52,6 +52,106 @@
       </tags>
   </entry>
   <entry>
+    <title>Reimu主题 - 适配本机</title>
+    <url>/2020/01/01/Reimu%E4%B8%BB%E9%A2%98%20-%20%E9%80%82%E9%85%8D%E6%9C%AC%E6%9C%BA/</url>
+    <content><![CDATA[<h1 id="查看系统官方教程"><a class="markdownIt-Anchor" href="#查看系统官方教程"></a> <a href="https://github.com/D-Sketon/hexo-theme-reimu">查看系统官方教程</a></h1>
+<h1 id="安装主题"><a class="markdownIt-Anchor" href="#安装主题"></a> <a href="https://github.com/D-Sketon/hexo-theme-reimu">安装主题</a></h1>
+<p>cmd 【 …/blog 文件下 】下载主题到本地</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/D-Sketon/hexo-theme-reimu.git</span><br></pre></td></tr></table></figure>
+<h2 id="使用主题"><a class="markdownIt-Anchor" href="#使用主题"></a> 使用主题</h2>
+<p>修改 【 …/blog/_config.yml 】文件中的内容：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: reimu  <span class="comment">#主题所在文件夹的名称</span></span><br></pre></td></tr></table></figure>
+<h1 id="修改主题结构"><a class="markdownIt-Anchor" href="#修改主题结构"></a> 修改主题结构</h1>
+<p>为了保证显示正确，请参考 【 …/blog/source/themes/reimu/_example】在外层的【 …/blog/source 】中分别建立 _data、about 和 friend 文件夹</p>
+<h2 id="作者头像-blogsource_dataavatar"><a class="markdownIt-Anchor" href="#作者头像-blogsource_dataavatar"></a> 作者头像  【…/blog/source/_data/avatar 】</h2>
+<p>【 …/avatar/avatar.jpg 】为作者头像，可在【 内层 _config.yml 】中做如下配置</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">avatar: <span class="string">&quot;avatar.jpg&quot;</span> <span class="comment"># 默认就是在avatar文件夹内寻找，请不要包含路径，否则会404</span></span><br></pre></td></tr></table></figure>
+<h2 id="about-blogsourceabout"><a class="markdownIt-Anchor" href="#about-blogsourceabout"></a> about  【…/blog/source/about 】</h2>
+<p><a href="http://index.md">index.md</a> 作为关于页面</p>
+<h2 id="friend-blogsourcefriend"><a class="markdownIt-Anchor" href="#friend-blogsourcefriend"></a> friend 【…/blog/source/friend 】</h2>
+<p><a href="http://index.md">index.md</a> 作为友链页面<br />
+在 _data.yml 中填入友链信息即可在页面上显示对应好友卡片</p>
+<h3 id="新建文件夹blogsourcefriendimage-用于存放链接图片"><a class="markdownIt-Anchor" href="#新建文件夹blogsourcefriendimage-用于存放链接图片"></a> 新建文件夹【…/blog/source/friend/image 】用于存放链接图片</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">image: https://pic.quanjing.com/w6/cx/QJ9109970044.jpg@!350h  <span class="comment"># 百度图片链接</span></span><br><span class="line"></span><br><span class="line">image: https://linghunshougezhe.github.io/images/banner.jpg  <span class="comment"># github 图片链接</span></span><br><span class="line"></span><br><span class="line">image: <span class="string">&quot;/friend/image/1.png&quot;</span>  <span class="comment"># 本地文件夹source内图片路径</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="创建分类选项"><a class="markdownIt-Anchor" href="#创建分类选项"></a> 创建“分类”选项</h2>
+<h3 id="生成分类页并添加tpye属性"><a class="markdownIt-Anchor" href="#生成分类页并添加tpye属性"></a> 生成“分类”页并添加tpye属性</h3>
+<p>cmd 【 …/blog 文件下 】创建categories文件夹，执行命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+<p>找到【 …/blog/source/categories/index.md 文件】，添加type: &quot;categories&quot;到内容中</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章分类</span><br><span class="line"><span class="built_in">date</span>: 2017-05-27 13:47:40</span><br><span class="line"><span class="built_in">type</span>: <span class="string">&quot;categories&quot;</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="给文章添加categories属性"><a class="markdownIt-Anchor" href="#给文章添加categories属性"></a> 给文章添加“categories”属性</h3>
+<p>hexo一篇文章不会产生两个分类，而是把分类嵌套（即该文章属于 “- web前端”下的 “-xxx ”分类）。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: jQuery对表单的操作及更多应用</span><br><span class="line"><span class="built_in">date</span>: 2017-05-26 12:12:57</span><br><span class="line">categories: </span><br><span class="line">- web前端</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h2 id="创建标签选项"><a class="markdownIt-Anchor" href="#创建标签选项"></a> 创建“标签”选项</h2>
+<h3 id="生成标签页并添加tpye属性"><a class="markdownIt-Anchor" href="#生成标签页并添加tpye属性"></a> 生成“标签”页并添加tpye属性</h3>
+<p>cmd 【 …/blog 文件下 】创建tags文件夹，执行命令</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>找到【 …/blog/source/tags/index.md 文件】，添加type: &quot;tags&quot;到内容中</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章分类</span><br><span class="line"><span class="built_in">date</span>: 2017-05-27 13:47:40</span><br><span class="line"><span class="built_in">type</span>: <span class="string">&quot;tags&quot;</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="给文章添加tags属性"><a class="markdownIt-Anchor" href="#给文章添加tags属性"></a> 给文章添加“tags”属性</h3>
+<p>打开需要添加标签的文章，为其添加tags属性。下方的tags:下方的- jQuery - 表格</p>
+<ul>
+<li>表单验证就是这篇文章的标签了</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: jQuery对表单的操作及更多应用</span><br><span class="line"><span class="built_in">date</span>: 2017-05-26 12:12:57</span><br><span class="line">categories: </span><br><span class="line">- web前端</span><br><span class="line">tags:</span><br><span class="line">- jQuery</span><br><span class="line">- 表格</span><br><span class="line">- 表单验证</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<ul>
+<li>我们可以打开【 …/blog/scaffolds/post.md 】新建页面的模板文件，添加【 categories: 】</li>
+<li>执行 【 hexo new 文章名 】 命令生成的文件，页面里就有categories:项了。</li>
+</ul>
+<h1 id="修改相关图片"><a class="markdownIt-Anchor" href="#修改相关图片"></a> 修改相关图片</h1>
+<h2 id="封面"><a class="markdownIt-Anchor" href="#封面"></a> 封面</h2>
+<p>文章的 <a href="https://blog.csdn.net/chffy0/article/details/107446102">头部文件 Front matter</a> 中的 cover 决定封面图片</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cover: <span class="string">&quot;/images/banner.jpg&quot;</span>  <span class="comment">#cover 为【 ../reimu/source/images 】文件夹中名为banner.jpg的图片</span></span><br><span class="line"></span><br><span class="line">cover: <span class="literal">false</span>  <span class="comment">#cover 为false，则该文章不显示头图</span></span><br><span class="line"></span><br><span class="line">cover: rgb(255,117,117)  <span class="comment">#cover 为rgb(xxx,xxx,xxx)，则该文章头图为对应的渐变纯色</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>在【 …/reimu/source 】文件夹下新建一个文件夹名为holdimg，将封面放入该文件夹内即可统一管理封面图</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cover: <span class="string">&quot;/holdimg/mm.jpeg&quot;</span>  <span class="comment">#cover 为【 ../reimu/source/holdimg 】文件夹中名为mm.jpeg的图片</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h2 id="头图"><a class="markdownIt-Anchor" href="#头图"></a> 头图</h2>
+<ul>
+<li>头图保存于 【 …//reimu/source/images/banner.jpg 】，可在【 内层 _config.yml 】中修改</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">banner: <span class="string">&quot;/images/banner.jpg&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="图标"><a class="markdownIt-Anchor" href="#图标"></a> 图标</h2>
+<ul>
+<li>图标保存于 【 …//reimu/source/images/favicon.ico 】，可在【 内层 _config.yml 】中修改</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">favicon: <span class="string">&quot;/images/favicon.ico&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="置顶文章"><a class="markdownIt-Anchor" href="#置顶文章"></a> 置顶文章</h2>
+<ul>
+<li>在文章的Front-matter中添加 sticky: true</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line">sticky: <span class="literal">true</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h1 id="代码高亮"><a class="markdownIt-Anchor" href="#代码高亮"></a> <a href="https://hexo.io/zh-cn/docs/syntax-highlight">代码高亮</a></h1>
+<p>为保证代码块的正确显示，请保证【 外层 _config.yml 】中为如下配置</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">highlight:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  line_number: <span class="literal">true</span></span><br><span class="line">  auto_detect: <span class="literal">false</span></span><br><span class="line">  tab_replace: <span class="string">&#x27;&#x27;</span></span><br><span class="line">  wrap: <span class="literal">true</span></span><br><span class="line">  hljs: <span class="literal">false</span></span><br><span class="line">prismjs:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">false</span>  <span class="comment">## 默认是false为显示代码高亮 ， true为关闭代码高亮</span></span><br><span class="line">  preprocess: <span class="literal">true</span></span><br><span class="line">  line_number: <span class="literal">true</span></span><br><span class="line">  tab_replace: <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<h1 id="数学公式"><a class="markdownIt-Anchor" href="#数学公式"></a> 数学公式</h1>
+<p>数学公式基于 <a href="https://github.com/KaTeX/KaTeX">Katex</a>，请安装 <a href="https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus">hexo-renderer-markdown-it-plus</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-markdown-it-plus --save</span><br></pre></td></tr></table></figure>
+<p>在【 内层 _config_yml 】中将 math.enable 改为 true</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">math:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h1 id="mermaid"><a class="markdownIt-Anchor" href="#mermaid"></a> Mermaid</h1>
+<p>请安装 <a href="https://github.com/webappdevelp/hexo-filter-mermaid-diagrams">hexo-filter-mermaid-diagrams</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-filter-mermaid-diagrams --save</span><br></pre></td></tr></table></figure>
+<p>在【 内层 _config_yml 】中将 mermaid.enable 改为 true</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mermaid:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h1 id="rss-待修改"><a class="markdownIt-Anchor" href="#rss-待修改"></a> RSS （待修改）</h1>
+<p>请安装 <a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
+<ul>
+<li>并参考其 <a href="https://github.com/hexojs/hexo-generator-feed#readme">README</a> 在【 外层 _config.yml 】完成对 feed 的配置</li>
+<li>在【 内层 _config.yml 】中填入生成的 xml</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rss: atom.xml</span><br></pre></td></tr></table></figure>
+<h1 id="站内搜索"><a class="markdownIt-Anchor" href="#站内搜索"></a> <a href="https://www.dandelioncloud.cn/article/details/1608424604811083778">站内搜索</a>（待修改）</h1>
+<p>站内搜索基于 <a href="https://www.algolia.com/">Algolia</a>，请安装 <a href="https://github.com/thom4parisot/hexo-algolia">hexo-algolia</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-algolia --save</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>初学者</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Reimu主题官方文档</title>
     <url>/2020/01/01/Reimu%E4%B8%BB%E9%A2%98%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3/</url>
     <content><![CDATA[<h1 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h1>
@@ -190,106 +290,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Reimu主题 - 适配本机</title>
-    <url>/2020/01/01/Reimu%E4%B8%BB%E9%A2%98%20-%20%E9%80%82%E9%85%8D%E6%9C%AC%E6%9C%BA/</url>
-    <content><![CDATA[<h1 id="查看系统官方教程"><a class="markdownIt-Anchor" href="#查看系统官方教程"></a> <a href="https://github.com/D-Sketon/hexo-theme-reimu">查看系统官方教程</a></h1>
-<h1 id="安装主题"><a class="markdownIt-Anchor" href="#安装主题"></a> <a href="https://github.com/D-Sketon/hexo-theme-reimu">安装主题</a></h1>
-<p>cmd 【 …/blog 文件下 】下载主题到本地</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/D-Sketon/hexo-theme-reimu.git</span><br></pre></td></tr></table></figure>
-<h2 id="使用主题"><a class="markdownIt-Anchor" href="#使用主题"></a> 使用主题</h2>
-<p>修改 【 …/blog/_config.yml 】文件中的内容：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line">theme: reimu  <span class="comment">#主题所在文件夹的名称</span></span><br></pre></td></tr></table></figure>
-<h1 id="修改主题结构"><a class="markdownIt-Anchor" href="#修改主题结构"></a> 修改主题结构</h1>
-<p>为了保证显示正确，请参考 【 …/blog/source/themes/reimu/_example】在外层的【 …/blog/source 】中分别建立 _data、about 和 friend 文件夹</p>
-<h2 id="作者头像-blogsource_dataavatar"><a class="markdownIt-Anchor" href="#作者头像-blogsource_dataavatar"></a> 作者头像  【…/blog/source/_data/avatar 】</h2>
-<p>【 …/avatar/avatar.jpg 】为作者头像，可在【 内层 _config.yml 】中做如下配置</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">avatar: <span class="string">&quot;avatar.jpg&quot;</span> <span class="comment"># 默认就是在avatar文件夹内寻找，请不要包含路径，否则会404</span></span><br></pre></td></tr></table></figure>
-<h2 id="about-blogsourceabout"><a class="markdownIt-Anchor" href="#about-blogsourceabout"></a> about  【…/blog/source/about 】</h2>
-<p><a href="http://index.md">index.md</a> 作为关于页面</p>
-<h2 id="friend-blogsourcefriend"><a class="markdownIt-Anchor" href="#friend-blogsourcefriend"></a> friend 【…/blog/source/friend 】</h2>
-<p><a href="http://index.md">index.md</a> 作为友链页面<br />
-在 _data.yml 中填入友链信息即可在页面上显示对应好友卡片</p>
-<h3 id="新建文件夹blogsourcefriendimage-用于存放链接图片"><a class="markdownIt-Anchor" href="#新建文件夹blogsourcefriendimage-用于存放链接图片"></a> 新建文件夹【…/blog/source/friend/image 】用于存放链接图片</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">image: https://pic.quanjing.com/w6/cx/QJ9109970044.jpg@!350h  <span class="comment"># 百度图片链接</span></span><br><span class="line"></span><br><span class="line">image: https://linghunshougezhe.github.io/images/banner.jpg  <span class="comment"># github 图片链接</span></span><br><span class="line"></span><br><span class="line">image: <span class="string">&quot;/friend/image/1.png&quot;</span>  <span class="comment"># 本地文件夹source内图片路径</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="创建分类选项"><a class="markdownIt-Anchor" href="#创建分类选项"></a> 创建“分类”选项</h2>
-<h3 id="生成分类页并添加tpye属性"><a class="markdownIt-Anchor" href="#生成分类页并添加tpye属性"></a> 生成“分类”页并添加tpye属性</h3>
-<p>cmd 【 …/blog 文件下 】创建categories文件夹，执行命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
-<p>找到【 …/blog/source/categories/index.md 文件】，添加type: &quot;categories&quot;到内容中</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章分类</span><br><span class="line"><span class="built_in">date</span>: 2017-05-27 13:47:40</span><br><span class="line"><span class="built_in">type</span>: <span class="string">&quot;categories&quot;</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h3 id="给文章添加categories属性"><a class="markdownIt-Anchor" href="#给文章添加categories属性"></a> 给文章添加“categories”属性</h3>
-<p>hexo一篇文章不会产生两个分类，而是把分类嵌套（即该文章属于 “- web前端”下的 “-xxx ”分类）。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: jQuery对表单的操作及更多应用</span><br><span class="line"><span class="built_in">date</span>: 2017-05-26 12:12:57</span><br><span class="line">categories: </span><br><span class="line">- web前端</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h2 id="创建标签选项"><a class="markdownIt-Anchor" href="#创建标签选项"></a> 创建“标签”选项</h2>
-<h3 id="生成标签页并添加tpye属性"><a class="markdownIt-Anchor" href="#生成标签页并添加tpye属性"></a> 生成“标签”页并添加tpye属性</h3>
-<p>cmd 【 …/blog 文件下 】创建tags文件夹，执行命令</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
-<p>找到【 …/blog/source/tags/index.md 文件】，添加type: &quot;tags&quot;到内容中</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章分类</span><br><span class="line"><span class="built_in">date</span>: 2017-05-27 13:47:40</span><br><span class="line"><span class="built_in">type</span>: <span class="string">&quot;tags&quot;</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h3 id="给文章添加tags属性"><a class="markdownIt-Anchor" href="#给文章添加tags属性"></a> 给文章添加“tags”属性</h3>
-<p>打开需要添加标签的文章，为其添加tags属性。下方的tags:下方的- jQuery - 表格</p>
-<ul>
-<li>表单验证就是这篇文章的标签了</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: jQuery对表单的操作及更多应用</span><br><span class="line"><span class="built_in">date</span>: 2017-05-26 12:12:57</span><br><span class="line">categories: </span><br><span class="line">- web前端</span><br><span class="line">tags:</span><br><span class="line">- jQuery</span><br><span class="line">- 表格</span><br><span class="line">- 表单验证</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<ul>
-<li>我们可以打开【 …/blog/scaffolds/post.md 】新建页面的模板文件，添加【 categories: 】</li>
-<li>执行 【 hexo new 文章名 】 命令生成的文件，页面里就有categories:项了。</li>
-</ul>
-<h1 id="修改相关图片"><a class="markdownIt-Anchor" href="#修改相关图片"></a> 修改相关图片</h1>
-<h2 id="封面"><a class="markdownIt-Anchor" href="#封面"></a> 封面</h2>
-<p>文章的 <a href="https://blog.csdn.net/chffy0/article/details/107446102">头部文件 Front matter</a> 中的 cover 决定封面图片</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cover: <span class="string">&quot;/images/banner.jpg&quot;</span>  <span class="comment">#cover 为【 ../reimu/source/images 】文件夹中名为banner.jpg的图片</span></span><br><span class="line"></span><br><span class="line">cover: <span class="literal">false</span>  <span class="comment">#cover 为false，则该文章不显示头图</span></span><br><span class="line"></span><br><span class="line">cover: rgb(255,117,117)  <span class="comment">#cover 为rgb(xxx,xxx,xxx)，则该文章头图为对应的渐变纯色</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>在【 …/reimu/source 】文件夹下新建一个文件夹名为holdimg，将封面放入该文件夹内即可统一管理封面图</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cover: <span class="string">&quot;/holdimg/mm.jpeg&quot;</span>  <span class="comment">#cover 为【 ../reimu/source/holdimg 】文件夹中名为mm.jpeg的图片</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h2 id="头图"><a class="markdownIt-Anchor" href="#头图"></a> 头图</h2>
-<ul>
-<li>头图保存于 【 …//reimu/source/images/banner.jpg 】，可在【 内层 _config.yml 】中修改</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">banner: <span class="string">&quot;/images/banner.jpg&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="图标"><a class="markdownIt-Anchor" href="#图标"></a> 图标</h2>
-<ul>
-<li>图标保存于 【 …//reimu/source/images/favicon.ico 】，可在【 内层 _config.yml 】中修改</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">favicon: <span class="string">&quot;/images/favicon.ico&quot;</span></span><br></pre></td></tr></table></figure>
-<h2 id="置顶文章"><a class="markdownIt-Anchor" href="#置顶文章"></a> 置顶文章</h2>
-<ul>
-<li>在文章的Front-matter中添加 sticky: true</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line">sticky: <span class="literal">true</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h1 id="代码高亮"><a class="markdownIt-Anchor" href="#代码高亮"></a> <a href="https://hexo.io/zh-cn/docs/syntax-highlight">代码高亮</a></h1>
-<p>为保证代码块的正确显示，请保证【 外层 _config.yml 】中为如下配置</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">highlight:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  line_number: <span class="literal">true</span></span><br><span class="line">  auto_detect: <span class="literal">false</span></span><br><span class="line">  tab_replace: <span class="string">&#x27;&#x27;</span></span><br><span class="line">  wrap: <span class="literal">true</span></span><br><span class="line">  hljs: <span class="literal">false</span></span><br><span class="line">prismjs:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">false</span>  <span class="comment">## 默认是false为显示代码高亮 ， true为关闭代码高亮</span></span><br><span class="line">  preprocess: <span class="literal">true</span></span><br><span class="line">  line_number: <span class="literal">true</span></span><br><span class="line">  tab_replace: <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-<h1 id="数学公式"><a class="markdownIt-Anchor" href="#数学公式"></a> 数学公式</h1>
-<p>数学公式基于 <a href="https://github.com/KaTeX/KaTeX">Katex</a>，请安装 <a href="https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus">hexo-renderer-markdown-it-plus</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-markdown-it-plus --save</span><br></pre></td></tr></table></figure>
-<p>在【 内层 _config_yml 】中将 math.enable 改为 true</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">math:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<h1 id="mermaid"><a class="markdownIt-Anchor" href="#mermaid"></a> Mermaid</h1>
-<p>请安装 <a href="https://github.com/webappdevelp/hexo-filter-mermaid-diagrams">hexo-filter-mermaid-diagrams</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-filter-mermaid-diagrams --save</span><br></pre></td></tr></table></figure>
-<p>在【 内层 _config_yml 】中将 mermaid.enable 改为 true</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mermaid:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<h1 id="rss-待修改"><a class="markdownIt-Anchor" href="#rss-待修改"></a> RSS （待修改）</h1>
-<p>请安装 <a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure>
-<ul>
-<li>并参考其 <a href="https://github.com/hexojs/hexo-generator-feed#readme">README</a> 在【 外层 _config.yml 】完成对 feed 的配置</li>
-<li>在【 内层 _config.yml 】中填入生成的 xml</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rss: atom.xml</span><br></pre></td></tr></table></figure>
-<h1 id="站内搜索"><a class="markdownIt-Anchor" href="#站内搜索"></a> <a href="https://www.dandelioncloud.cn/article/details/1608424604811083778">站内搜索</a>（待修改）</h1>
-<p>站内搜索基于 <a href="https://www.algolia.com/">Algolia</a>，请安装 <a href="https://github.com/thom4parisot/hexo-algolia">hexo-algolia</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-algolia --save</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>web前端</category>
-      </categories>
-      <tags>
-        <tag>初学者</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2020/01/01/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -403,18 +403,6 @@
       </tags>
   </entry>
   <entry>
-    <title>我们相遇了</title>
-    <url>/2022/01/28/%E6%88%91%E4%BB%AC%E7%9B%B8%E9%81%87%E4%BA%86/</url>
-    <content><![CDATA[<p><img src="%E6%88%91%E4%BB%AC%E7%9B%B8%E9%81%87%E4%BA%86.gif" alt="" /></p>
-]]></content>
-      <categories>
-        <category>恋爱日记</category>
-      </categories>
-      <tags>
-        <tag>相遇</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>我们相爱啦</title>
     <url>/2022/01/30/%E6%88%91%E4%BB%AC%E7%9B%B8%E7%88%B1%E5%95%A6/</url>
     <content><![CDATA[<p><img src="%E6%88%91%E4%BB%AC%E7%9B%B8%E7%88%B1%E5%95%A6.gif" alt="" /></p>
@@ -424,6 +412,18 @@
       </categories>
       <tags>
         <tag>相爱</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我们相遇了</title>
+    <url>/2022/01/28/%E6%88%91%E4%BB%AC%E7%9B%B8%E9%81%87%E4%BA%86/</url>
+    <content><![CDATA[<p><img src="%E6%88%91%E4%BB%AC%E7%9B%B8%E9%81%87%E4%BA%86.gif" alt="" /></p>
+]]></content>
+      <categories>
+        <category>恋爱日记</category>
+      </categories>
+      <tags>
+        <tag>相遇</tag>
       </tags>
   </entry>
 </search>
